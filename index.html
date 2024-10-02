@@ -11,7 +11,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #000000;
+            background-color: black;
             color: white;
             font-family:impact;
             font-size: 240px;
@@ -31,13 +31,14 @@
             const now = new Date();
             // Cria um objeto "Date" com a data e hora atuais.
             const hours = String(now.getHours()).padStart(2, '0'); 
-            // "String" e "padStart" converte o número em string e possibilita a existência de ao menos 2 dígitos (adicionando um zero se necessário).
+            // "String" converte o número em string. 
+            // "padStart" possibilita a existência de ao menos 2 dígitos (adicionando um zero se necessário).
             const minutes = String(now.getMinutes()).padStart(2, '0');
             const seconds = String(now.getSeconds()).padStart(2, '0');
-            const time = `${hours}:${minutes}:${seconds}`;
+            const formattedTime = `${hours}:${minutes}:${seconds}`;
             // Formata a string da hora no formato HH:MM:SS.
-            document.getElementById('Clock').textContent = time;
-            // Atualiza o conteúdo do <div> com a hora formatada.
+            document.getElementById('Clock').textContent = formattedTime;
+            // Atualiza o conteúdo da <div> com a hora formatada.
         }
 
         updateClock(); 
@@ -50,4 +51,3 @@
 </body>
 
 </html>
-
