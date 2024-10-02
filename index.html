@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Clock</title>
@@ -12,30 +13,41 @@
             height: 100vh;
             background-color: #000000;
             color: white;
-            font-family:fantasy;
+            font-family:impact;
             font-size: 240px;
         }
     </style>
+
 </head>
 
 <body>
-    
+
     <div id="Clock"></div>
 
     <script>
-        function updateClock() {
+
+        function updateClock() {    
+        // Função responsável por pegar a hora atual do sistema e formatá-la.
             const now = new Date();
+            // Cria um objeto "Date" com a data e hora atuais.
             const hours = String(now.getHours()).padStart(2, '0'); 
+            // "String" e "padStart" converte o número em string e possibilita a existência de ao menos 2 dígitos (adicionando um zero se necessário).
             const minutes = String(now.getMinutes()).padStart(2, '0');
             const seconds = String(now.getSeconds()).padStart(2, '0');
             const time = `${hours}:${minutes}:${seconds}`;
+            // Formata a string da hora no formato HH:MM:SS.
             document.getElementById('Clock').textContent = time;
+            // Atualiza o conteúdo do <div> com a hora formatada.
         }
 
-        // Updates the clock immediately after each second!!
-        updateClock();
+        updateClock(); 
+        // Atualiza o relógio imediatamente a cada segundo.
         setInterval(updateClock, 1000);
+        // Essa função chama "updateClock" a cada 1000 milissegundos (1 segundo) atualizando, assim, a hora exibida no relógio.
+
     </script>
+
 </body>
 
 </html>
+
